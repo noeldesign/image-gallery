@@ -29,7 +29,7 @@ const Home = () => {
       {/* Albums section */}
       <div id="albums" className="w-full">
         <div className="mx-auto max-w-[1240px] px-2 py-16">
-          <h2 className="p-5 text-center text-xl uppercase">Photo Albums</h2>
+          <h2 className="p-5 text-center text-2xl uppercase text-white">Photo Albums</h2>
           <div className="grid gap-8 md:grid-cols-2">
             <Link href="/Gallery">
               <div className="flex h-auto w-full cursor-pointer items-center justify-center rounded-xl p-4 hover:scale-105 duration-150">

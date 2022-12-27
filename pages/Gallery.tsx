@@ -29,14 +29,6 @@ const Gallery: NextPage = ({ images }: { images: ImageProps[] }) => {
   return (
     <>
       <Head>
-        <meta
-          property="og:image"
-          content="https://nextjsconf-pics.vercel.app/og-image.png"
-        />
-        <meta
-          name="twitter:image"
-          content="https://nextjsconf-pics.vercel.app/og-image.png"
-        />
         <title>Noel Photography</title>
       </Head>
       <main className="mx-auto max-w-[1960px] p-4">
@@ -75,7 +67,7 @@ const Gallery: NextPage = ({ images }: { images: ImageProps[] }) => {
               className="after:content group relative cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
             >
               <Image
-                alt="Next.js Conf photo"
+                alt=""
                 className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
                 style={{ transform: 'translate3d(0, 0, 0)' }}
                 placeholder="blur"
