@@ -7,7 +7,7 @@ import cloudinary from '../../utils/cloudinary'
 import getBase64ImageUrl from '../../utils/generateBlurPlaceholder'
 import type { ImageProps } from '../../utils/types'
 
-const Home: NextPage = ({ currentPhoto }: { currentPhoto: ImageProps }) => {
+const Gallery: NextPage = ({ currentPhoto }: { currentPhoto: ImageProps }) => {
   const router = useRouter()
   const { photoId } = router.query
   let index = Number(photoId)
@@ -28,7 +28,7 @@ const Home: NextPage = ({ currentPhoto }: { currentPhoto: ImageProps }) => {
   )
 }
 
-export default Home
+export default Gallery
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const results = await getResults()
