@@ -6,7 +6,6 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          <title>Noel Photography</title>
         </Head>
         <body className="bg-[#000030] antialiased">
           <Main />

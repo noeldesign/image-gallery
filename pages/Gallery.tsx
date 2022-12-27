@@ -37,6 +37,7 @@ const Gallery: NextPage = ({ images }: { images: ImageProps[] }) => {
           name="twitter:image"
           content="https://nextjsconf-pics.vercel.app/og-image.png"
         />
+        <title>Noel Photography</title>
       </Head>
       <main className="mx-auto max-w-[1960px] p-4">
         {photoId && (
@@ -51,7 +52,7 @@ const Gallery: NextPage = ({ images }: { images: ImageProps[] }) => {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
           <div className="after:content relative col-span-1 row-span-3 flex flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-white/10 px-6 pb-20 pt-0 text-center text-white shadow-highlight after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight sm:col-span-2 lg:col-span-1 lg:row-span-2 lg:pt-0">
             <h1 className="mt-8 mb-4 text-base font-bold uppercase tracking-widest">
-              Special Event Photos
+              Modeling Photos
             </h1>
             <p className="max-w-[40ch] text-white/75 sm:max-w-[32ch]">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos aliquam eaque cupiditate.
@@ -67,7 +68,7 @@ const Gallery: NextPage = ({ images }: { images: ImageProps[] }) => {
           {images.map(({ id, public_id, format, blurDataUrl }) => (
             <Link
               key={id}
-              href={`/?photoId=${id}`}
+              href={`/Gallery/?photoId=${id}`}
               as={`/p/${id}`}
               id={`photo-${id}`}
               shallow

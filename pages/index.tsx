@@ -2,10 +2,14 @@ import Link from "next/link";
 import React from "react";
 import Navbar from "../components/Navbar";
 import {FaFacebookF, FaInstagram, FaLinkedinIn} from 'react-icons/fa';
+import Head from "next/head";
 
 const Home = () => {
   return (
     <>
+    <Head>
+      <title>Noel Photography</title>
+    </Head>
       <Navbar />
       {/* Main section */}
       <div id="main" className="h-screen w-full text-center text-white">
@@ -28,38 +32,38 @@ const Home = () => {
           <h2 className="p-5 text-center text-xl uppercase">Photo Albums</h2>
           <div className="grid gap-8 md:grid-cols-2">
             <Link href="/Gallery">
-              <div className="flex h-auto w-full cursor-pointer items-center justify-center rounded-xl p-4 shadow-xl shadow-gray-400 duration-150 hover:scale-105">
+              <div className="flex h-auto w-full cursor-pointer items-center justify-center rounded-xl p-4 hover:scale-105 duration-150">
                 <img
                   src="https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bW9kZWx8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                   alt=""
-                  className="rounded-xl"
+                  className="rounded-xl shadow-md shadow-gray-400"
                 />
               </div>
             </Link>
             <Link href="/Gallery">
-              <div className="flex h-auto w-full cursor-pointer items-center justify-center rounded-xl p-4 shadow-xl shadow-gray-400 duration-150 hover:scale-105">
+              <div className="flex h-auto w-full cursor-pointer items-center justify-center rounded-xl p-4 hover:scale-105 duration-150">
                 <img
                   src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9kZWx8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                   alt=""
-                  className="rounded-xl"
+                  className="rounded-xl shadow-md shadow-gray-400"
                 />
               </div>
             </Link>
             <Link href="/Gallery">
-              <div className="flex h-auto w-full cursor-pointer items-center justify-center rounded-xl p-4 shadow-xl shadow-gray-400 duration-150 hover:scale-105">
+              <div className="flex h-auto w-full cursor-pointer items-center justify-center rounded-xl p-4 hover:scale-105 duration-150">
                 <img
                   src="https://images.unsplash.com/photo-1502323777036-f29e3972d82f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW9kZWx8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                   alt=""
-                  className="rounded-xl"
+                  className="rounded-xl shadow-md shadow-gray-400"
                 />
               </div>
             </Link>
             <Link href="/Gallery">
-              <div className="flex h-auto w-full cursor-pointer items-center justify-center rounded-xl p-4 shadow-xl shadow-gray-400 duration-150 hover:scale-105">
+              <div className="flex h-auto w-full cursor-pointer items-center justify-center rounded-xl p-4 hover:scale-105 duration-150">
                 <img
                   src="https://images.unsplash.com/photo-1599732494971-a6110ea1ad20?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG1vZGVsfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                   alt=""
-                  className="rounded-xl"
+                  className="rounded-xl shadow-md shadow-gray-400"
                 />
               </div>
             </Link>
@@ -70,7 +74,7 @@ const Home = () => {
       {/* Contact section */}
       <div
         id="contact"
-        className="h-80 w-full bg-[#282c34] text-center text-white"
+        className="h-80 w-full bg-[#070A60] text-center text-white"
       >
         <div className="m-auto flex max-w-[600px] flex-col">
           <div>
@@ -79,17 +83,17 @@ const Home = () => {
           <div className="flex justify-evenly">
             <div className="cursor-pointer rounded-full bg-white p-5 duration-300 ease-in hover:scale-110">
               <a target="_blank" href="https://www.linkedin.com">
-                <FaLinkedinIn className="text-[#0072b1]" />
+                <FaLinkedinIn className="text-black" />
               </a>
             </div>
             <div className="cursor-pointer rounded-full bg-white p-5 duration-300 ease-in hover:scale-110">
               <a target="_blank" href="https://www.facebook.com">
-                <FaFacebookF className="text-[#0072b1]" />
+                <FaFacebookF className="text-black" />
               </a>
             </div>
             <div className="cursor-pointer rounded-full bg-white p-5 duration-300 ease-in hover:scale-110">
               <a target="_blank" href="https://www.instagram.com">
-                <FaInstagram className="text-[#0072b1]" />
+                <FaInstagram className="text-black" />
               </a>
             </div>
           </div>
