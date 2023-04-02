@@ -12,6 +12,8 @@ import { useLastViewedPhoto } from '../utils/useLastViewedPhoto'
 
 const Gallery: NextPage = ({ images }: { images: ImageProps[] }) => {
   const router = useRouter()
+  // access the query parameters from the URL to get which img folder to filter
+  const folderName = router.query.folderName 
   const { photoId } = router.query
   const [lastViewedPhoto, setLastViewedPhoto] = useLastViewedPhoto()
 
@@ -57,30 +59,35 @@ const Gallery: NextPage = ({ images }: { images: ImageProps[] }) => {
               Back to Home
             </a>
           </div>
-          {images.map(({ id, public_id, format, blurDataUrl }) => (
-            <Link
-              key={id}
-              href={`/Gallery/?photoId=${id}`}
-              as={`/p/${id}`}
-              id={`photo-${id}`}
-              shallow
-              className="after:content group relative cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
-            >
-              <Image
-                alt=""
-                className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
-                style={{ transform: 'translate3d(0, 0, 0)' }}
-                placeholder="blur"
-                blurDataURL={blurDataUrl}
-                src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`}
-                width={720}
-                height={480}
-                sizes="(max-width: 640px) 100vw,
-                  (max-width: 1280px) 50vw,
-                  (max-width: 1536px) 33vw,
-                  25vw"
-              />
-            </Link>
+          {  images.map(({ id, public_id, format, blurDataUrl }) => (
+            <>
+              {/* conditionally render filter images by folder name from query params */}
+              {public_id.split('/').includes(`${folderName}`) 
+              ? <Link
+                  key={id}
+                  href={`/Gallery/?photoId=${id}`}
+                  as={`/p/${id}`}
+                  id={`photo-${id}`}
+                  shallow
+                  className="after:content group relative cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
+                >
+                <Image
+                  alt=""
+                  className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
+                  style={{ transform: 'translate3d(0, 0, 0)' }}
+                  placeholder="blur"
+                  blurDataURL={blurDataUrl}
+                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`}
+                  width={720}
+                  height={480}
+                  sizes="(max-width: 640px) 100vw,
+                    (max-width: 1280px) 50vw,
+                    (max-width: 1536px) 33vw,
+                    25vw"
+                />
+                </Link>
+              : null}
+            </>
           ))}
         </div>
       </main>
